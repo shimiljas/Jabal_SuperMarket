@@ -1,0 +1,55 @@
+.price-modal {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+
+}
+
+.price_settings__profile {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.05);
+  
+    .price-profile-user {
+      display: block;
+  
+      @media only screen and (min-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 20px;
+      }
+  
+      @media only screen and (min-width: 1200px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-column-gap: 40px;
+      }
+    }
+  }
+
+  .custom-btn{
+    justify-content: center;
+    margin-top: 6px;
+  }
+
+  // Price List
+
+  .price-list {
+    .leads-body{
+      @media only screen and (min-width: 1200px) {
+        display: grid;
+        grid-column-gap: 30px;
+        grid-template-columns: 1fr 2.5fr;
+      }
+    }
+    .lead__table-card {
+      background: #ffffff;
+      margin-bottom: 30px;
+      box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.05);
+      border-radius: 10px;
+      padding: 20px;
+      overflow: hidden;
+    }
+  }

@@ -1,0 +1,33 @@
+@import 'settings/variable'; //themes' colors
+
+//base...
+@import 'generic/normalize.scss';
+@import 'generic/box-sizing.scss';
+@import './base/scaffolding'; // styles of base elements
+@import './base/typography'; // base styles of h1-h6, p, span
+
+//components...
+@import 'component/btn';
+@import './component/card';
+@import './component/check-box';
+@import './component/sidebar';
+@import './component/topbar';
+@import './component/load';
+@import './component/form';
+@import './component/table';
+@import './component//pagination';
+@import './component/modal';
+@import './component/dropzone';
+
+//pages...
+@import 'containers/account';
+@import 'containers/dashboard';
+@import 'containers/demands';
+@import 'containers/settings';
+@import 'containers/inventory';
+@import 'containers/pricemodal';
+@import 'containers/contact';
+@import 'containers/not-found.scss';
+
+//objects...
+@import 'objects/layout.scss';
