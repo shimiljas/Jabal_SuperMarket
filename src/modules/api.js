@@ -208,6 +208,11 @@ export const getdashboard = () => getAndCache(`admin/get/all`);
 export const searchBynumber = data => post('customer/sale/search', data);
 
 export const submitsale = data => post('customer/sale/new', data);
+export const setOffer = data => post('customer/sale/limit', data);
+
+export const fetchLimit = () => getWithoutHeader('customer/fetch/limit');
+
+//---new data-----------
 
 export const getClosingDemand = page =>
   getAndCache(`dealer/demands?closingSoon=1&page=${page}`);

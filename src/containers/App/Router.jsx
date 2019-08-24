@@ -9,6 +9,7 @@ import LogIn from '../LogIn/index';
 import Splash from '../Splash';
 // Sub Pages
 import DashBoard from '../DashBoard';
+import LimitForm from '../Limit';
 
 import requireAuth from '../../modules/requireAuth';
 
@@ -21,6 +22,7 @@ const Pages = () => (
     <Route path='/pages/dashboard' component={DashBoard} />
 
     <Route path='/pages/sales/new' component={NewSale} />
+    <Route path='/pages/sales/lmit' component={LimitForm} />
   </Switch>
 );
 

@@ -33,6 +33,11 @@ class SidebarContent extends Component {
               route='/pages/sales/new'
               onClick={this.hideSidebar}
             />
+            <SidebarLink
+              title='Offer Setting'
+              route='/pages/sales/lmit'
+              onClick={this.hideSidebar}
+            />
           </SidebarCategory>
         </ul>
       </div>

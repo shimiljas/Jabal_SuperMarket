@@ -28,6 +28,9 @@ import * as api from '../../../modules/api';
 import _ from 'lodash';
 import moment from 'moment';
 import { toast } from 'react-toastify';
+
+const PhoneNumberValdiation = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
 class SalesForm extends Component {
   state = {
     loader: false,
@@ -38,11 +41,37 @@ class SalesForm extends Component {
   };
   handleSubmit = () => {
     const { loader, phone_number, price, discount } = this.state;
+
+    if (phone_number.length == 0) {
+      toast.error('Please add a mobile number');
+      return;
+    }
+    if (isNaN(phone_number)) {
+      toast.error('Please add a valid mobile number');
+      return;
+    }
+
+    if (phone_number.length < 10) {
+      toast.error('Please add a valid mobile number');
+      return;
+    }
+
+    if (!phone_number.match(PhoneNumberValdiation)) {
+      toast.error('Please add a valid mobile number');
+      return;
+    }
+
+    if (price.length == 0) {
+      toast.error('Please add a price');
+      return;
+    }
+
     let data = {
       phone_number,
       price,
     };
     if (!discount) data.discount = discount;
+
     this.setState({ loader: true });
     api
       .submitsale(data)
@@ -58,6 +87,26 @@ class SalesForm extends Component {
 
   search = () => {
     const { loader, phone_number, price, discount } = this.state;
+
+    if (phone_number.length == 0) {
+      toast.error('Please add a mobile number');
+      return;
+    }
+    if (phone_number.length < 10) {
+      toast.error('Please add a valid mobile number');
+      return;
+    }
+
+    if (isNaN(phone_number)) {
+      toast.error('Please add a valid number');
+      return;
+    }
+
+    if (!phone_number.match(PhoneNumberValdiation)) {
+      toast.error('Please add a valid mobile number');
+      return;
+    }
+
     let data = { phone_number };
     this.setState({ loader: false });
     api
@@ -211,9 +260,9 @@ class SalesForm extends Component {
             <div style={{ marginHorizontal: 50 }}>
               <Table striped responsive>
                 <tbody>
-                  {seaerch_result.sales.map(item => {
+                  {seaerch_result.sales.map((item, index) => {
                     return (
-                      <tr>
+                      <tr key={index}>
                         <td>{moment(item.date).format('DD/MM/YY')}</td>
                         <td>{item.price}</td>
                         <td />
