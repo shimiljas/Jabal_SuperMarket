@@ -100,7 +100,10 @@ class LimitForm extends Component {
           <div className='form form--horizontal'>
             <div className='form__form-group'>
               <span className='form__form-group-label'>Limit</span>
-              <div className='form__form-group-field'>
+              <div
+                className='form__form-group-field'
+                style={{ maxWidth: '50%' }}
+              >
                 <Input
                   name='price'
                   type='text'
@@ -116,7 +119,10 @@ class LimitForm extends Component {
 
             <div className='form__form-group'>
               <span className='form__form-group-label'>Discount</span>
-              <div className='form__form-group-field'>
+              <div
+                className='form__form-group-field'
+                style={{ maxWidth: '50%' }}
+              >
                 <Input
                   name='discount'
                   type='text'
