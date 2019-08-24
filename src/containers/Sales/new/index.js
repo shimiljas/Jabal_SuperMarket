@@ -165,12 +165,12 @@ class SalesForm extends Component {
           <div className='form form--horizontal'>
             <div className='form__form-group'>
               <span className='form__form-group-label'>Phone Number</span>
-
-              <div className='form__form-group-field'>
+              <div className='form__form-group-field' style={{maxWidth: '50%'}}>
                 <div className='form__form-group-icon'>+91</div>
                 <Input
                   name='phonenumber'
                   type='text'
+                  max={10} 
                   value={phone_number}
                   onChange={event =>
                     this.setState({
@@ -179,10 +179,11 @@ class SalesForm extends Component {
                   }
                 />
 
-                <ButtonToolbar className='form__button-toolbar'>
+                <ButtonToolbar style={{marginLeft: '20px', marginTop: '1px'}} className='form__button-toolbar'>
                   <button
                     type='button'
                     className='btn btn-primary account__btn account__btn--small'
+                    style={{padding: '4px 25px'}}
                     onClick={this.search}
                   >
                     Search
@@ -193,7 +194,7 @@ class SalesForm extends Component {
 
             <div className='form__form-group'>
               <span className='form__form-group-label'>Price</span>
-              <div className='form__form-group-field'>
+              <div className='form__form-group-field' style={{maxWidth: '50%'}}>
                 <Input
                   name='price'
                   type='text'
@@ -208,7 +209,7 @@ class SalesForm extends Component {
             </div>
             <div className='form__form-group'>
               <span className='form__form-group-label'>Discount</span>
-              <div className='form__form-group-field'>
+              <div className='form__form-group-field' style={{maxWidth: '50%'}}>
                 <Input
                   name='discount'
                   type='text'
@@ -221,7 +222,7 @@ class SalesForm extends Component {
                 />
               </div>
             </div>
-            <ButtonToolbar className='form__button-toolbar'>
+            <ButtonToolbar   className='form__button-toolbar'>
               <button
                 type='button'
                 className='btn btn-primary account__btn account__btn--small'
