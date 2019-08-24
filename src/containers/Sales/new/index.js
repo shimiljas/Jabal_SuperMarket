@@ -72,12 +72,20 @@ class SalesForm extends Component {
     };
     if (!discount) data.discount = discount;
 
+    console.log(data, 'datadatadata');
+
     this.setState({ loader: true });
     api
       .submitsale(data)
       .then(res => {
-        toast.success('Purchase added');
-        this.setState({ seaerch_result: res.data, loader: false });
+        console.log(res, 'Sdfsdfsdf------------><>');
+        debugger;
+        if (res.status == 200) {
+          toast.success('Purchase added');
+          this.setState({ seaerch_result: res.data, loader: false });
+        } else {
+          toast.success('Something went wrong');
+        }
       })
       .catch(err => {
         toast.success('Something went wrong');
@@ -112,7 +120,7 @@ class SalesForm extends Component {
     api
       .searchBynumber(data)
       .then(res => {
-        console.log(res);
+        console.log(res, 'Sdfsdfsdf------------><>');
         if (res.status == 200) {
           this.setState({ seaerch_result: res.data, loader: false });
         } else {
@@ -165,12 +173,15 @@ class SalesForm extends Component {
           <div className='form form--horizontal'>
             <div className='form__form-group'>
               <span className='form__form-group-label'>Phone Number</span>
-              <div className='form__form-group-field' style={{maxWidth: '50%'}}>
+              <div
+                className='form__form-group-field'
+                style={{ maxWidth: '50%' }}
+              >
                 <div className='form__form-group-icon'>+91</div>
                 <Input
                   name='phonenumber'
                   type='text'
-                  max={10} 
+                  max={10}
                   value={phone_number}
                   onChange={event =>
                     this.setState({
@@ -179,11 +190,14 @@ class SalesForm extends Component {
                   }
                 />
 
-                <ButtonToolbar style={{marginLeft: '20px', marginTop: '1px'}} className='form__button-toolbar'>
+                <ButtonToolbar
+                  style={{ marginLeft: '20px', marginTop: '1px' }}
+                  className='form__button-toolbar'
+                >
                   <button
                     type='button'
                     className='btn btn-primary account__btn account__btn--small'
-                    style={{padding: '4px 25px'}}
+                    style={{ padding: '4px 25px' }}
                     onClick={this.search}
                   >
                     Search
@@ -194,7 +208,10 @@ class SalesForm extends Component {
 
             <div className='form__form-group'>
               <span className='form__form-group-label'>Price</span>
-              <div className='form__form-group-field' style={{maxWidth: '50%'}}>
+              <div
+                className='form__form-group-field'
+                style={{ maxWidth: '50%' }}
+              >
                 <Input
                   name='price'
                   type='text'
@@ -209,7 +226,10 @@ class SalesForm extends Component {
             </div>
             <div className='form__form-group'>
               <span className='form__form-group-label'>Discount</span>
-              <div className='form__form-group-field' style={{maxWidth: '50%'}}>
+              <div
+                className='form__form-group-field'
+                style={{ maxWidth: '50%' }}
+              >
                 <Input
                   name='discount'
                   type='text'
@@ -222,7 +242,7 @@ class SalesForm extends Component {
                 />
               </div>
             </div>
-            <ButtonToolbar   className='form__button-toolbar'>
+            <ButtonToolbar className='form__button-toolbar'>
               <button
                 type='button'
                 className='btn btn-primary account__btn account__btn--small'
