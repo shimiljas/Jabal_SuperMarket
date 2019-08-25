@@ -78,8 +78,6 @@ class SalesForm extends Component {
     api
       .submitsale(data)
       .then(res => {
-        console.log(res, 'Sdfsdfsdf------------><>');
-        debugger;
         if (res.status == 200) {
           toast.success('Purchase added');
           this.setState({
@@ -89,18 +87,15 @@ class SalesForm extends Component {
             discount: '',
             phone_number: '',
           });
-        } else {
-          toast.success('Something went wrong');
+        } else if (res.status == 400) {
+          toast.error('Discount is greater than existing');
         }
       })
       .catch(err => {
-        toast.success('Something went wrong');
+        toast.error('Something went wrong');
         this.setState({
           seaerch_result: {},
           loader: false,
-          price: '',
-          discount: '',
-          phone_number: '',
         });
       });
   };
@@ -136,7 +131,7 @@ class SalesForm extends Component {
         if (res.status == 200) {
           this.setState({ seaerch_result: res.data, loader: false });
         } else {
-          toast.success('No purchase before');
+          toast.error('No purchase before');
           this.setState({ seaerch_result: {}, loader: false });
         }
       })
