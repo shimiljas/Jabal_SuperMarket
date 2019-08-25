@@ -82,14 +82,26 @@ class SalesForm extends Component {
         debugger;
         if (res.status == 200) {
           toast.success('Purchase added');
-          this.setState({ seaerch_result: res.data, loader: false });
+          this.setState({
+            seaerch_result: res.data,
+            loader: false,
+            price: '',
+            discount: '',
+            phone_number: '',
+          });
         } else {
           toast.success('Something went wrong');
         }
       })
       .catch(err => {
         toast.success('Something went wrong');
-        this.setState({ seaerch_result: {}, loader: false });
+        this.setState({
+          seaerch_result: {},
+          loader: false,
+          price: '',
+          discount: '',
+          phone_number: '',
+        });
       });
   };
 

@@ -1,3 +1,4 @@
+/* eslint-disable  */
 import React, { Component } from 'react';
 import { Collapse } from 'reactstrap';
 import PropTypes from 'prop-types';
@@ -19,7 +20,7 @@ export default class SidebarCategory extends Component {
   constructor() {
     super();
     this.state = {
-      collapse: false,
+      collapse: true,
     };
   }
 
@@ -28,9 +29,7 @@ export default class SidebarCategory extends Component {
   };
 
   render() {
-    const {
-      title, icon, isNew, children,
-    } = this.props;
+    const { title, icon, isNew, children } = this.props;
     const { collapse } = this.state;
     const categoryClass = classNames({
       'sidebar__category-wrap': true,
@@ -39,18 +38,25 @@ export default class SidebarCategory extends Component {
 
     return (
       <div className={categoryClass}>
-        <button type="button" className="sidebar__link sidebar__category" onClick={this.toggle}>
-          {icon ? <span className={`sidebar__link-icon lnr lnr-${icon}`} /> : ''}
-          <p className="sidebar__link-title">{title}
-            {isNew && <span className="sidebar__category-new" />}
+        <button
+          type='button'
+          className='sidebar__link sidebar__category'
+          onClick={this.toggle}
+        >
+          {icon ? (
+            <span className={`sidebar__link-icon lnr lnr-${icon}`} />
+          ) : (
+            ''
+          )}
+          <p className='sidebar__link-title'>
+            {title}
+            {isNew && <span className='sidebar__category-new' />}
           </p>
-          <span className="sidebar__category-icon lnr lnr-chevron-right" />
+          <span className='sidebar__category-icon lnr lnr-chevron-right' />
         </button>
-        <Collapse isOpen={collapse} className="sidebar__submenu-wrap">
-          <ul className="sidebar__submenu">
-            <div>
-              {children}
-            </div>
+        <Collapse isOpen={collapse} className='sidebar__submenu-wrap'>
+          <ul className='sidebar__submenu'>
+            <div>{children}</div>
           </ul>
         </Collapse>
       </div>
