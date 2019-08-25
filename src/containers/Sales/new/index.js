@@ -88,6 +88,7 @@ class SalesForm extends Component {
             phone_number: '',
           });
         } else if (res.status == 400) {
+          this.setState({ loader: false });
           toast.error('Discount is greater than existing');
         }
       })
