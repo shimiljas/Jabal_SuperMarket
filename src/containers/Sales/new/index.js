@@ -70,7 +70,7 @@ class SalesForm extends Component {
       phone_number,
       price,
     };
-    if (!discount) data.discount = discount;
+    if (discount.length > 0) data.discount = discount;
 
     console.log(data, 'datadatadata');
 
