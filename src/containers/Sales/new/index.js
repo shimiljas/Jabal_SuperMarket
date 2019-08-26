@@ -185,12 +185,18 @@ class SalesForm extends Component {
                 className='form__form-group-field'
                 style={{ maxWidth: '50%' }}
               >
-                <div className='form__form-group-icon'>+91</div>
+                <div
+                  className='form__form-group-icon'
+                  style={{ borderColor: 'black' }}
+                >
+                  +91
+                </div>
                 <Input
                   name='phonenumber'
                   type='text'
                   max={10}
                   value={phone_number}
+                  style={{ borderColor: 'black' }}
                   onChange={event =>
                     this.setState({
                       phone_number: event.target.value.replace(/\D/, ''),
@@ -215,7 +221,7 @@ class SalesForm extends Component {
             </div>
 
             <div className='form__form-group'>
-              <span className='form__form-group-label'>Price</span>
+              <span className='form__form-group-label'>Purchase</span>
               <div
                 className='form__form-group-field'
                 style={{ maxWidth: '50%' }}
@@ -224,6 +230,7 @@ class SalesForm extends Component {
                   name='price'
                   type='text'
                   value={price}
+                  style={{ borderColor: 'black' }}
                   onChange={event =>
                     this.setState({
                       price: event.target.value.replace(/\D/, ''),
@@ -242,6 +249,7 @@ class SalesForm extends Component {
                   name='discount'
                   type='text'
                   value={discount}
+                  style={{ borderColor: 'black' }}
                   onChange={event =>
                     this.setState({
                       discount: event.target.value.replace(/\D/, ''),

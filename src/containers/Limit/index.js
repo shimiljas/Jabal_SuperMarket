@@ -108,6 +108,7 @@ class LimitForm extends Component {
                   name='price'
                   type='text'
                   value={limit}
+                  style={{ borderColor: 'black' }}
                   onChange={event =>
                     this.setState({
                       limit: event.target.value.replace(/\D/, ''),
@@ -127,6 +128,7 @@ class LimitForm extends Component {
                   name='discount'
                   type='text'
                   value={discount}
+                  style={{ borderColor: 'black' }}
                   onChange={event =>
                     this.setState({
                       discount: event.target.value.replace(/\D/, ''),
