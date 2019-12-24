@@ -12,6 +12,7 @@ app.get('/ping', (req, res) => {
 app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname, 'build/index.html'), function (err) {
         if (err) {
+            console.log('1111111111', err)
             res.status(500).send(err)
         }
     })

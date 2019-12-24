@@ -1,8 +1,8 @@
 {
-  "name": "easydev-seed",
+  "name": "jabal",
   "version": "2.0.0",
   "private": true,
-  "homepage": "http://previews.aspirity.com/easydev",
+  "homepage": "http://previews.aspirity.com",
   "dependencies": {
     "@hapi/joi": "^15.1.0",
     "bfj": "^6.1.1",
