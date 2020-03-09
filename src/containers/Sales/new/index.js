@@ -38,9 +38,10 @@ class SalesForm extends Component {
     price: '',
     discount: '',
     seaerch_result: {},
+    owned_by:''
   };
   handleSubmit = () => {
-    const { loader, phone_number, price, discount } = this.state;
+    const { loader, phone_number, price, discount ,owned_by} = this.state;
 
     if (phone_number.length == 0) {
       toast.error('Please add a mobile number');
@@ -69,6 +70,7 @@ class SalesForm extends Component {
     let data = {
       phone_number,
       price,
+      owned_by
     };
     if (discount.length > 0) data.discount = discount;
 
@@ -86,6 +88,7 @@ class SalesForm extends Component {
             price: '',
             discount: '',
             phone_number: '',
+            owned_by:''
           });
         } else if (res.status == 400) {
           this.setState({ loader: false });
@@ -148,6 +151,7 @@ class SalesForm extends Component {
       price,
       discount,
       seaerch_result,
+      owned_by
     } = this.state;
 
     if (loader) {
@@ -239,6 +243,28 @@ class SalesForm extends Component {
                 />
               </div>
             </div>
+            
+            <div className='form__form-group'>
+              <span className='form__form-group-label'>Owned By</span>
+              <div
+                className='form__form-group-field'
+                style={{ maxWidth: '50%' }}
+              >
+                <Input
+                  name='owned_by'
+                  type='text'
+                  value={owned_by}
+                  style={{ borderColor: 'black' }}
+                  onChange={event =>
+                    this.setState({
+                      owned_by: event.target.value,
+                    })
+                  }
+                />
+              </div>
+            </div>
+            
+            
             <div className='form__form-group'>
               <span className='form__form-group-label'>Discount</span>
               <div
