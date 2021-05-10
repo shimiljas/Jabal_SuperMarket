@@ -22,7 +22,7 @@
     "jest": "^24.3.1",
     "jest-pnp-resolver": "^1.2.1",
     "jest-resolve": "^24.3.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "lodash.range": "^3.2.0",
     "mdi-react": "^5.5.0",
     "memory-cache": "^0.2.0",
